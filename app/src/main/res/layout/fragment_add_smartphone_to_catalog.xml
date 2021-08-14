@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/smartPhoneVendorEditText"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:ems="10"
+                android:hint="@string/smartphone_vendor_edit_text"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/smartPhoneModelNameEditText"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="@string/smartphone_model_name_edit_text"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/smartPhoneOSEditText"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="@string/smartphone_os_edit_text"
+                android:inputType="text"
+                android:textAlignment="viewStart" />
+
+            <EditText
+                android:id="@+id/smartPhoneRAMEditText"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="@string/smartphone_ram_edit_text"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/smartPhoneFlashEditText"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="@string/smartphone_flash_edit_text"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/smartPhoneScreenEditText"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="@string/smartphone_screen_edit_text"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/smartPhoneDisplayEditText"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="@string/smartphone_display_edit_text"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/smartPhoneCameraEditText"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="@string/smartphone_camera_edit_text"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/addSmartPhoneToCatalogButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="Add" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

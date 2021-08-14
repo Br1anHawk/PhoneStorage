@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/catalogFragment"
+        android:name="com.example.phonestorage.CatalogFragment"
+        android:label="CatalogFragment" >
+        <action
+            android:id="@+id/action_catalogFragment_to_addSmartPhoneToCatalog"
+            app:destination="@id/addSmartPhoneToCatalog" />
+        <argument
+            android:name="smartPhone"
+            app:argType="com.example.phonestorage.SmartPhone"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.phonestorage.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_catalogFragment"
+            app:destination="@id/catalogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addSmartPhoneToCatalog"
+        android:name="com.example.phonestorage.AddSmartPhoneToCatalog"
+        android:label="AddSmartPhoneToCatalog" >
+        <action
+            android:id="@+id/action_addSmartPhoneToCatalog_to_catalogFragment"
+            app:destination="@id/catalogFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+</navigation>

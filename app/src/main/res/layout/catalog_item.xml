@@ -1,0 +1,187 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/catalogItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginBottom="8dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <TextView
+            android:id="@+id/phoneModelNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Galaxy S21 5G "
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontalFirst"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/deleteSmartPhoneFromCatalogButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_baseline_delete_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_smartphone_100" />
+
+        <TextView
+            android:id="@+id/OSLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/os_label"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalFirst"
+            app:layout_constraintTop_toTopOf="@+id/guidelineHorizontalFirst" />
+
+        <TextView
+            android:id="@+id/ScreenLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/screen_label"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalSecond"
+            app:layout_constraintTop_toTopOf="@+id/guidelineHorizontalFirst" />
+
+        <TextView
+            android:id="@+id/DisplayLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/display_label"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalSecond"
+            app:layout_constraintTop_toBottomOf="@+id/ScreenLabel" />
+
+        <TextView
+            android:id="@+id/FlashLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/flash_label"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalFirst"
+            app:layout_constraintTop_toBottomOf="@+id/RAMLabel" />
+
+        <TextView
+            android:id="@+id/RAMLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/ram_label"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalFirst"
+            app:layout_constraintTop_toBottomOf="@+id/OSLabel" />
+
+        <TextView
+            android:id="@+id/CameraLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/camera_label"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalSecond"
+            app:layout_constraintTop_toBottomOf="@+id/DisplayLabel" />
+
+        <TextView
+            android:id="@+id/VendorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="SAMSUNG"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVerticalFirst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="160dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHorizontalFirst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="50dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVerticalSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="285dp" />
+
+        <TextView
+            android:id="@+id/OSTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            tools:text="Android"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalFirst"
+            app:layout_constraintTop_toTopOf="@+id/guidelineHorizontalFirst" />
+
+        <TextView
+            android:id="@+id/RAMTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            tools:text="8 GB"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalFirst"
+            app:layout_constraintTop_toBottomOf="@+id/OSTextView" />
+
+        <TextView
+            android:id="@+id/FlashTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            tools:text="128 GB"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalFirst"
+            app:layout_constraintTop_toBottomOf="@+id/RAMTextView" />
+
+        <TextView
+            android:id="@+id/ScreenTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            tools:text="6.2 ''"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalSecond"
+            app:layout_constraintTop_toTopOf="@+id/guidelineHorizontalFirst" />
+
+        <TextView
+            android:id="@+id/DisplayTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            tools:text="AMOLED"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalSecond"
+            app:layout_constraintTop_toBottomOf="@+id/ScreenTextView" />
+
+        <TextView
+            android:id="@+id/CameraTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            tools:text="64 Mp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalSecond"
+            app:layout_constraintTop_toBottomOf="@+id/DisplayTextView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

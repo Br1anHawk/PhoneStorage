@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">PhoneStorage</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="os_label">OS : </string>
+    <string name="ram_label">RAM : </string>
+    <string name="flash_label">Flash : </string>
+    <string name="screen_label">Screen : </string>
+    <string name="display_label">Display : </string>
+    <string name="camera_label">Camera : </string>
+
+    <string name="smartphone_vendor_edit_text">Vendor</string>
+    <string name="smartphone_model_name_edit_text">Model</string>
+    <string name="smartphone_os_edit_text">OS</string>
+    <string name="smartphone_ram_edit_text">RAM</string>
+    <string name="smartphone_flash_edit_text">Flash</string>
+    <string name="smartphone_screen_edit_text">Screen</string>
+    <string name="smartphone_display_edit_text">Display</string>
+    <string name="smartphone_camera_edit_text">Camera</string>
+</resources>
