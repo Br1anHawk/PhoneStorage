@@ -26,10 +26,10 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/deleteSmartPhoneFromCatalogButton"
+            android:id="@+id/buttonEditSmartphoneInfo"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@drawable/ic_baseline_delete_24"
+            android:background="@drawable/ic_edit_100"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

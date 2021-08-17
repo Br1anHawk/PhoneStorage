@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">PhoneStorage</string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="vendor_label">Vendor : </string>
+    <string name="model_label">Model : </string>
     <string name="os_label">OS : </string>
     <string name="ram_label">RAM : </string>
     <string name="flash_label">Flash : </string>
@@ -16,4 +18,8 @@
     <string name="smartphone_screen_edit_text">Screen</string>
     <string name="smartphone_display_edit_text">Display</string>
     <string name="smartphone_camera_edit_text">Camera</string>
+
+    <string name="button_add_smartphone_info">Add</string>
+    <string name="button_edit_smartphone_info">Edit</string>
+
 </resources>

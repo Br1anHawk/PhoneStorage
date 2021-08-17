@@ -41,8 +41,8 @@ class SmartPhoneViewHolder private constructor(
                 else
                     DISPLAY_IF_PROPERTY_IS_INVALID
 
-            deleteSmartPhoneFromCatalogButton.setOnClickListener {
-                smartPhoneListener.deleteSmartPhoneFromCatalog(smartPhone.id)
+            buttonEditSmartphoneInfo.setOnClickListener {
+                smartPhoneListener.editSmartphoneInfo(smartPhone.id)
             }
         }
     }

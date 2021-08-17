@@ -1,36 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
     app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/catalogFragment"
         android:name="com.example.phonestorage.CatalogFragment"
-        android:label="CatalogFragment" >
+        android:label="CatalogFragment"
+        tools:layout="@layout/fragment_catalog">
         <action
             android:id="@+id/action_catalogFragment_to_addSmartPhoneToCatalog"
             app:destination="@id/addSmartPhoneToCatalog" />
-        <argument
-            android:name="smartPhone"
-            app:argType="com.example.phonestorage.SmartPhone"
-            app:nullable="true" />
+        <action
+            android:id="@+id/action_catalogFragment_to_editSmartPhoneInfo"
+            app:destination="@id/editSmartPhoneInfo" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.phonestorage.HomeFragment"
-        android:label="HomeFragment" >
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_catalogFragment"
-            app:destination="@id/catalogFragment" />
+            app:destination="@id/catalogFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/addSmartPhoneToCatalog"
-        android:name="com.example.phonestorage.AddSmartPhoneToCatalog"
-        android:label="AddSmartPhoneToCatalog" >
+        android:name="com.example.phonestorage.AddSmartPhoneToCatalogFragment"
+        android:label="AddSmartPhoneToCatalog"
+        tools:layout="@layout/fragment_add_smartphone_to_catalog">
         <action
             android:id="@+id/action_addSmartPhoneToCatalog_to_catalogFragment"
             app:destination="@id/catalogFragment"
             app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/editSmartPhoneInfo"
+        android:name="com.example.phonestorage.EditSmartPhoneInfoFragment"
+        android:label="EditSmartPhoneInfo"
+        tools:layout="@layout/fragment_edit_smartphone_info">
+        <action
+            android:id="@+id/action_editSmartPhoneInfo_to_catalogFragment"
+            app:destination="@id/catalogFragment" />
+        <argument
+            android:name="smartphone"
+            app:argType="com.example.phonestorage.SmartPhone"
+            app:nullable="true" />
     </fragment>
 </navigation>

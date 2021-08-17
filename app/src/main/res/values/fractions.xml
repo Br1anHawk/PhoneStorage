@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <fraction name="fragment_edit_smartphone_info_guideline_separator_constraint_percent">0.35</fraction>
+</resources>

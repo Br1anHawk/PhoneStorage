@@ -6,9 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.phonestorage.databinding.FragmentCatalogBinding
 
@@ -39,16 +37,11 @@ class CatalogFragment: Fragment(), SmartPhoneListener {
             adapter = catalogAdapter
         }
 
-        val args: CatalogFragmentArgs by navArgs()
-        args.smartPhone?.let { catalogViewModel.insertSmartPhone(it) }
-
-
         binding.openSmartPhoneFormForAddindButton.setOnClickListener {
             this.findNavController().navigate(
                 CatalogFragmentDirections.actionCatalogFragmentToAddSmartPhoneToCatalog()
             )
         }
-
 
         catalogViewModel.smartPhones.observe(viewLifecycleOwner, {
             it?.let {
@@ -57,12 +50,14 @@ class CatalogFragment: Fragment(), SmartPhoneListener {
             }
         })
 
-
         return binding.root
     }
 
-    override fun deleteSmartPhoneFromCatalog(id: Long) {
-        catalogViewModel.deleteSmartPhone(id)
+    override fun editSmartphoneInfo(id: Long) {
+        val smartPhone = catalogViewModel.getSmartPhone(id)
+        this.findNavController().navigate(
+            CatalogFragmentDirections.actionCatalogFragmentToEditSmartPhoneInfo(smartPhone )
+        )
     }
 
     override fun onDestroyView() {

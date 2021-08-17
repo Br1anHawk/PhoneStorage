@@ -22,12 +22,8 @@ class HomeFragment: Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         binding.goToCatalogButton.setOnClickListener {
-            this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToCatalogFragment(null))
+            this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToCatalogFragment())
         }
-
-
-
-
 
         return binding.root
     }
