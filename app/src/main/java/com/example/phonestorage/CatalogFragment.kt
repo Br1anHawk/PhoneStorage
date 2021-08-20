@@ -54,10 +54,14 @@ class CatalogFragment: Fragment(), SmartPhoneListener {
     }
 
     override fun editSmartphoneInfo(id: Long) {
-        val smartPhone = catalogViewModel.getSmartPhone(id)
-        this.findNavController().navigate(
-            CatalogFragmentDirections.actionCatalogFragmentToEditSmartPhoneInfo(smartPhone )
-        )
+        catalogViewModel.getSmartPhone(id)
+        catalogViewModel.smartPhone?.observe(viewLifecycleOwner, {
+            it?.let {
+                this.findNavController().navigate(
+                    CatalogFragmentDirections.actionCatalogFragmentToEditSmartPhoneInfo(it)
+                )
+            }
+        })
     }
 
     override fun onDestroyView() {

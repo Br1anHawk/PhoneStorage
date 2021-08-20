@@ -15,7 +15,7 @@ interface CatalogDatabaseDao {
     suspend fun updateSmartPhone(smartPhone: SmartPhone)
 
     @Query("SELECT * FROM smartphones WHERE id = :id")
-    suspend fun getSmartPhone(id: Long): SmartPhone?
+    fun getSmartPhone(id: Long): LiveData<SmartPhone>
 
     @Query("DELETE FROM smartphones WHERE id = :id")
     suspend fun deleteSmartPhone(id: Long)

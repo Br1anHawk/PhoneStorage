@@ -13,7 +13,7 @@ class CatalogViewModel(
 
     val smartPhones = catalogDatabase.getAllSmartPhones()
 
-    private val smartPhone =  MutableLiveData<SmartPhone?>()
+    var smartPhone: LiveData<SmartPhone>? = null
 
     fun insertSmartPhone(smartPhone: SmartPhone) {
         viewModelScope.launch {
@@ -27,8 +27,8 @@ class CatalogViewModel(
         }
     }
 
-    fun getSmartPhone(id: Long): SmartPhone? {
-        return smartPhone.value
+    fun getSmartPhone(id: Long) {
+       smartPhone = catalogDatabase.getSmartPhone(id)
     }
 
     fun deleteSmartPhone(id: Long) {

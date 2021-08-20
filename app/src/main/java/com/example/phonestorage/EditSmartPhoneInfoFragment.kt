@@ -32,18 +32,19 @@ class EditSmartPhoneInfoFragment : Fragment() {
         _binding = FragmentEditSmartphoneInfoBinding.inflate(inflater, container, false)
 
         val args: EditSmartPhoneInfoFragmentArgs by navArgs()
-        args.smartphone?.let {
-            editTextSmartphoneVendor.setText(it.vendor)
-            editTextSmartphoneModel.setText(it.model)
-            editTextSmartphoneOS.setText(it.os)
-            editTextSmartphoneRAM.setText(it.ram.toString())
-            editTextSmartphoneFlash.setText(it.flash.toString())
-            editTextSmartphoneScreen.setText(it.screen.toString())
-            editTextSmartphoneDisplay.setText(it.display)
-            editTextSmartphoneCamera.setText(it.camera.toString())
-        }
-
         val smartphoneId = args.smartphone?.id ?: 0L
+        args.smartphone?.let {
+            with(binding.include) {
+                editTextSmartphoneVendor.setText(it.vendor)
+                editTextSmartphoneModel.setText(it.model)
+                editTextSmartphoneOS.setText(it.os)
+                editTextSmartphoneRAM.setText(it.ram.toString())
+                editTextSmartphoneFlash.setText(it.flash.toString())
+                editTextSmartphoneScreen.setText(it.screen.toString())
+                editTextSmartphoneDisplay.setText(it.display)
+                editTextSmartphoneCamera.setText(it.camera.toString())
+            }
+        }
 
         binding.buttonRemoveSmartphoneFromCatalog.setOnClickListener {
             catalogViewModel.deleteSmartPhone(smartphoneId)
@@ -56,28 +57,30 @@ class EditSmartPhoneInfoFragment : Fragment() {
         }
 
         binding.buttonEditSmartphoneInfo.setOnClickListener {
-            val smartPhone = SmartPhone(
-                id = smartphoneId,
-                vendor = editTextSmartphoneVendor.text.toString(),
-                model = editTextSmartphoneModel.text.toString(),
-                os = editTextSmartphoneOS.text.toString(),
-                ram = editTextSmartphoneRAM.text.toString().toByteOrNull()
-                    ?: DATA_CLASS_BYTE_TYPE_INIT,
-                flash = editTextSmartphoneFlash.text.toString().toShortOrNull()
-                    ?: DATA_CLASS_SHORT_TYPE_INIT,
-                screen = editTextSmartphoneScreen.text.toString().toFloatOrNull()
-                    ?: DATA_CLASS_FLOAT_TYPE_INIT,
-                display = editTextSmartphoneDisplay.text.toString(),
-                camera = editTextSmartphoneCamera.text.toString().toShortOrNull()
-                    ?: DATA_CLASS_SHORT_TYPE_INIT
-            )
-            catalogViewModel.updateSmartPhone(smartPhone)
-            this
-                .findNavController()
-                .navigate(
-                    EditSmartPhoneInfoFragmentDirections
-                        .actionEditSmartPhoneInfoToCatalogFragment()
+            with(binding.include) {
+                val smartPhone = SmartPhone(
+                    id = smartphoneId,
+                    vendor = editTextSmartphoneVendor.text.toString(),
+                    model = editTextSmartphoneModel.text.toString(),
+                    os = editTextSmartphoneOS.text.toString(),
+                    ram = editTextSmartphoneRAM.text.toString().toByteOrNull()
+                        ?: DATA_CLASS_BYTE_TYPE_INIT,
+                    flash = editTextSmartphoneFlash.text.toString().toShortOrNull()
+                        ?: DATA_CLASS_SHORT_TYPE_INIT,
+                    screen = editTextSmartphoneScreen.text.toString().toFloatOrNull()
+                        ?: DATA_CLASS_FLOAT_TYPE_INIT,
+                    display = editTextSmartphoneDisplay.text.toString(),
+                    camera = editTextSmartphoneCamera.text.toString().toShortOrNull()
+                        ?: DATA_CLASS_SHORT_TYPE_INIT
                 )
+                catalogViewModel.updateSmartPhone(smartPhone)
+            }
+                this
+                    .findNavController()
+                    .navigate(
+                        EditSmartPhoneInfoFragmentDirections
+                            .actionEditSmartPhoneInfoToCatalogFragment()
+                    )
         }
 
         return binding.root

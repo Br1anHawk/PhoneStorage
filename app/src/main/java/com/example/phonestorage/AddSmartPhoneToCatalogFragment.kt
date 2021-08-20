@@ -33,25 +33,30 @@ class AddSmartPhoneToCatalogFragment: Fragment() {
 
 
         binding.addSmartPhoneToCatalogButton.setOnClickListener {
-            val smartPhone = SmartPhone(
-                id = 0L,
-                vendor = editTextSmartphoneVendor.text.toString(),
-                model = editTextSmartphoneModel.text.toString(),
-                os = editTextSmartphoneOS.text.toString(),
-                ram = editTextSmartphoneRAM.text.toString().toByteOrNull() ?: DATA_CLASS_BYTE_TYPE_INIT,
-                flash = editTextSmartphoneFlash.text.toString().toShortOrNull() ?: DATA_CLASS_SHORT_TYPE_INIT,
-                screen = editTextSmartphoneScreen.text.toString().toFloatOrNull() ?: DATA_CLASS_FLOAT_TYPE_INIT,
-                display = editTextSmartphoneDisplay.text.toString(),
-                camera = editTextSmartphoneCamera.text.toString().toShortOrNull() ?: DATA_CLASS_SHORT_TYPE_INIT
-            )
-            catalogViewModel.insertSmartPhone(smartPhone)
+            with(binding.include) {
+                val smartPhone = SmartPhone(
+                    id = 0L,
+                    vendor = editTextSmartphoneVendor.text.toString(),
+                    model = editTextSmartphoneModel.text.toString(),
+                    os = editTextSmartphoneOS.text.toString(),
+                    ram = editTextSmartphoneRAM.text.toString().toByteOrNull()
+                        ?: DATA_CLASS_BYTE_TYPE_INIT,
+                    flash = editTextSmartphoneFlash.text.toString().toShortOrNull()
+                        ?: DATA_CLASS_SHORT_TYPE_INIT,
+                    screen = editTextSmartphoneScreen.text.toString().toFloatOrNull()
+                        ?: DATA_CLASS_FLOAT_TYPE_INIT,
+                    display = editTextSmartphoneDisplay.text.toString(),
+                    camera = editTextSmartphoneCamera.text.toString().toShortOrNull()
+                        ?: DATA_CLASS_SHORT_TYPE_INIT
+                )
+                catalogViewModel.insertSmartPhone(smartPhone)
+            }
             this
                 .findNavController()
                 .navigate(
                     AddSmartPhoneToCatalogFragmentDirections
                         .actionAddSmartPhoneToCatalogToCatalogFragment()
                 )
-
         }
         return binding.root
     }
